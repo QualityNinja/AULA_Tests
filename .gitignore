@@ -1,0 +1,6 @@
+.pytest_cache
+.idea
+*.iml
+.env
+report_test_aula
+alure-results
