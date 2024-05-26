@@ -6,7 +6,7 @@ from base.base_test import BaseTest
 @allure.feature("Test")
 class TestProfileFeature(BaseTest):
 
-    @allure.title("Main test")
+    @allure.title('testеest')
     @allure.severity("Critical")
     @pytest.mark.smoke
     def test_creation(self):
