@@ -30,3 +30,10 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history/allure-history
           keep_reports: 5
+      - name: Push результатов в Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history/allure-history
