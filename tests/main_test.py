@@ -14,8 +14,8 @@ class TestProfileFeature(BaseTest):
         self.login_page.enter_login(self.data.LOGIN)
         self.login_page.enter_password(self.data.PASSWORD)
         self.login_page.click_enter_button()
-        self.home_page.is_opened()
-        self.home_page.click_requests_button()
+        #self.home_page.is_opened() - изминения на вебе - убрали страницу
+        #self.home_page.click_requests_button() - изминения на вебе - убрали страницу
         self.requests_page.click_create_request()
         self.requests_page.pop_up_sccept()
         self.requests_page.house()

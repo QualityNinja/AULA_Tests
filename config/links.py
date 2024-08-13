@@ -1,4 +1,4 @@
-
+# Линки страниц сайта
 
 class Links:
     HOST = "https://devadmin.aula.city"

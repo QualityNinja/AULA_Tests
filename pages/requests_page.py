@@ -3,6 +3,8 @@ from base.base_page import BasePage
 from config.links import Links
 from selenium.webdriver.support import expected_conditions as EC
 
+# Селекторы
+
 
 class RequestsPage(BasePage):
     PAGE_URL = Links.REQUEST_PAGE
@@ -24,6 +26,8 @@ class RequestsPage(BasePage):
     CREATE_BUTTON = ('xpath', '//span[text()=" Создать "]')
     REFRESH = ('xpath', '(//span[@class="v-btn__content"])[5]')
     VIEW_REQUEST = ('xpath', '(//tr)[3]')
+
+# Проверки с явным ожиданием
 
     @allure.step("Click add request button")
     def click_create_request(self):

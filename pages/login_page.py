@@ -3,6 +3,8 @@ from base.base_page import BasePage
 from config.links import Links
 from selenium.webdriver.support import expected_conditions as EC
 
+# Селекторы
+
 
 class LoginPage(BasePage):
     PAGE_URL = Links.LOGIN_PAGE
@@ -10,6 +12,8 @@ class LoginPage(BasePage):
     LOGIN_FIELD = ('xpath', '//input[@name="phone"]')
     PASSWORD_FIELD = ('xpath', '//input[@name="password"]')
     ENTER_BUTTON = ('xpath', '//*[@id="submit"]')
+
+# Проверки с явным ожиданием
 
     @allure.step("Enter login")
     def enter_login(self, login):
