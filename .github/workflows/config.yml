@@ -1,4 +1,4 @@
-name: UI_Tests_AULA
+name: UI Tests
 
 on: workflow_dispatch
 
