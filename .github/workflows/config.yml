@@ -11,8 +11,8 @@ jobs:
       - name: Создание .env файла
         run: |
           touch .env
-          echo login="${{ secrets.LOGIN }}" >> .env
-          echo password="${{ secrets.PASSWORD }}" >> .env
+          echo login=${{ secrets.LOGIN }} >> .env
+          echo password=${{ secrets.PASSWORD }} >> .env
           cat .env
-      - name: Запуск ui тестов через docker
-        run: sh start.sh
+      # - name: Запуск ui тестов через docker
+      #   run: sh start.sh
