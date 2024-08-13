@@ -4,3 +4,5 @@
 .env
 report
 allure-results
+__pycache__
+base/__pycache__
