@@ -6,13 +6,12 @@ jobs:
   ui-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Проверка git через модуль checkout
-        uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v3 
       - name: Создание .env файла
         run: |
           touch .env
           echo login=${{ secrets.LOGIN }} >> .env
           echo password=${{ secrets.PASSWORD }} >> .env
-          cat .env
+          cat .env    
       - name: Запуск ui тестов через docker
         run: sh start.sh
