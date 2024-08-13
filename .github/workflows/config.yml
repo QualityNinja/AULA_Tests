@@ -8,8 +8,11 @@ jobs:
     steps:
       - name: Проверка git через модуль checkout
         uses: actions/checkout@v4.1.7
+      - name: Создание .env файла
+        run: |
+          touch .env
+          echo login="${{ secrets.LOGIN }}" >> .env
+          echo password="${{ secrets.PASSWORD }}" >> .env
+          cat .env
       - name: Запуск ui тестов через docker
-        env:
-          LOGIN: ${{ secrets.LOGIN }}
-          PASSWORD: ${{ secrets.PASSWORD }}
         run: sh start.sh
