@@ -6,7 +6,8 @@ jobs:
   ui-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 
+      - name: Проверка git
+        uses: actions/checkout@v3 
       - name: Создание .env файла
         run: |
           touch .env
@@ -15,3 +16,17 @@ jobs:
           cat .env    
       - name: Запуск ui тестов через docker
         run: sh start.sh
+      - name: Получение историй allure-results
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Получение отчета allure
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history/allure-history
+          keep_reports: 5
